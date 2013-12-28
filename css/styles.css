@@ -27,12 +27,8 @@ body a:hover, body a:focus {
 }
 
 .content {
-    display: none;
     padding: 0 10px;
-}
-
-.content.active {
-    display: block;
+    width: 100%;
 }
 
 .content-wrapper {
@@ -65,4 +61,34 @@ body a:hover, body a:focus {
 
 li.tabbed {
     margin-left: 20px;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    -webkit-transition: 0.5s ease-in all; /* Safari/Chrome */
+    -moz-transition: 0.5s ease-in all; /* Firefox */
+    -ms-transition: 0.5s ease-in all; /* IE10 */
+    -o-transition: 0.5s ease-in all; /* Opera */
+    transition: 0.5s ease-in all; /* Future Browsers */
+    display: block;
+}
+
+.view-animate.ng-enter {
+    margin-left: 30%;
+    opacity: 0;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+    margin-left: 0;
+    opacity: 1;
+}
+
+.view-animate.ng-leave.ng-leave-active + .view-animate.ng-enter.ng-enter-active {
+    /* Delay enter animation if a view is exiting */
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+    margin-left: 30%;
+    opacity: 0;
 }

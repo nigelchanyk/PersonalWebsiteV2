@@ -1,84 +1,3 @@
-// Class Pagination
-Pagination = function(nav, content) {
-    this.animating = false;
-    this.nav = nav;
-    this.content = content;
-};
-
-Pagination.prototype.divFadeOut = function(element, callback) {
-    var _this = this;
-    this.animating = true;
-    element.css({
-        'margin-left': 0,
-        'opacity': 1,
-        'width': element.parent().width()
-    });
-    element.animate({
-            'margin-left': '30%',
-            'opacity': 0
-        },
-        500,
-        'swing',
-        function() {
-            element.css('width', 'auto');
-            element.removeClass('active');
-            _this.animating = false;
-            if (callback != null)
-                callback();
-        }
-    );
-};
-
-Pagination.prototype.divFadeIn = function(element, callback) {
-    var _this = this;
-    this.animating = true;
-    element.addClass('active');
-    element.css({
-        'margin-left': '30%',
-        'opacity': 0,
-        'width': element.parent().width()
-    });
-    element.animate({
-            'margin-left': 0,
-            'opacity': 1
-        },
-        500,
-        'swing',
-        function() {
-            element.css('width', 'auto');
-            _this.animating = false;
-            if (callback != null)
-                callback();
-        }
-    );
-};
-
-Pagination.prototype.register = function(selector) {
-    var _this = this;
-    $(selector, this.nav).bind('click', function() {
-        if ($(selector, _this.content).hasClass('active'))
-            return;
-        if (_this.animating) {
-            $('.active', _this.content).stop(true, true).removeClass('active');
-            $('.active', _this.nav).removeClass('active');
-            $(selector, _this.content).addClass('active');
-            $(selector, _this.content).css({
-                'opacity': 1,
-                'margin-left': 0,
-                'width': 'auto'
-            });
-        }
-        else {
-            _this.divFadeOut($('.active', _this.content), function() {
-                $('.active', _this.nav).removeClass('active');
-                $(selector, _this.content).addClass('active');
-                _this.divFadeIn($(selector, _this.content), null);
-            });
-        }
-    });
-};
-
-
 // Class NavigatorFader
 var NavigatorFader = function(nav) {
     var _this = this;
@@ -115,11 +34,35 @@ var smartCollapse = function() {
 };
 
 
-$(document).ready(function() {
-    var pagination = new Pagination('#main-nav', '.content-wrapper');
-    pagination.register('.home');
-    pagination.register('.resume');
+var app = angular.module('app', ['ngAnimate', 'ngRoute']);
 
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
+        when('/', {
+            templateUrl: 'templates/home.html'
+        }).
+        when('/blog', {
+            templateUrl: 'templates/blog.html'
+        }).
+        when('/resume', {
+            templateUrl: 'templates/resume.html'
+        }).
+        when('/projects', {
+            templateUrl: 'templates/projects.html'
+        }).
+        otherwise({
+            redirectTo: '/'
+    });
+}]);
+
+
+var HeaderController = function($scope, $location) {
+    $scope.isActive = function(viewLocation) { 
+        return viewLocation === $location.path();
+    };
+};
+
+$(document).ready(function() {
     var navFader = new NavigatorFader('.navbar');
 
     $('.body-wrapper').bind('click', smartCollapse);
