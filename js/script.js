@@ -48,7 +48,8 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'templates/resume.html'
         }).
         when('/projects', {
-            templateUrl: 'templates/projects.html'
+            templateUrl: 'templates/projects.html',
+            controller: 'ProjectsController'
         }).
         otherwise({
             redirectTo: '/'
@@ -59,6 +60,17 @@ app.config(['$routeProvider', function($routeProvider) {
 var HeaderController = function($scope, $location) {
     $scope.isActive = function(viewLocation) { 
         return viewLocation === $location.path();
+    };
+};
+
+var ProjectsController = function($scope, $location) {
+    $scope.active = 'archetype';
+    $scope.isActive = function(project) {
+        return project === $scope.active;
+    };
+    $scope.toggle = function(project) {
+        $scope.active = project;
+        console.log($scope.active);
     };
 };
 

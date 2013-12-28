@@ -51,16 +51,25 @@ body a:hover, body a:focus {
 	margin-bottom: 20px;
 }
 
+li.tabbed {
+    margin-left: 20px;
+}
+
 .navbar {
     opacity: 0.95;
 }
 
-.spaceless-paragraphs p {
-    margin-bottom: 3px;
+.projects .toggler {
+    display: block;
+    border-bottom: 1px solid #ccc;
 }
 
-li.tabbed {
-    margin-left: 20px;
+.projects .project-section {
+    border-bottom: 1px solid #ccc;
+}
+
+.spaceless-paragraphs p {
+    margin-bottom: 3px;
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
@@ -91,4 +100,24 @@ li.tabbed {
 .view-animate.ng-leave.ng-leave-active {
     margin-left: 30%;
     opacity: 0;
+}
+
+@media (max-width: 767px) {
+    .projects .toggler.active {
+        display: none;
+    }
+
+    .projects .project-section {
+        display: none;
+    }
+
+    .projects .project-section.active {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .projects .toggler {
+        display: none;
+    }
 }

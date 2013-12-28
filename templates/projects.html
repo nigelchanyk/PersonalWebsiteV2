@@ -1,28 +1,32 @@
-<div class="row">
-    <div class="col-md-3">
-        <ul class="nav">
-            <li><a>Archetype</a></li>
-            <li><a>Tales of Etherea</a></li>
-            <li><a>Cryptative</a></li>
-            <li><a>AeroInvasion</a></li>
-            <li><a>MIPS Debugger</a></li>
-        </ul>
+<div class="projects">
+    <a class="toggler" ng-class="{ active: isActive('archetype') }" ng-click="toggle('archetype')">
+        <h5>Archetype</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('archetype') }">
+        <h2>Archetype</h2>
     </div>
-    <div class="col-md-9">
-        <div class="project-section">
-            <h2>Archetype</h2>
-        </div>
-        <div class="project-section">
-            <h2>Tales of Etherea</h2>
-        </div>
-        <div class="project-section">
-            <h2>Cryptative</h2>
-        </div>
-        <div class="project-section">
-            <h2>AeroInvasion</h2>
-        </div>
-        <div class="project-section">
-            <h2>MIPS Debugger</h2>
-        </div>
+    <a class="toggler" ng-class="{ active: isActive('etherea') }" ng-click="toggle('etherea')">
+        <h5>Tales of Etherea</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('etherea') }">
+        <h2>Tales of Etherea</h2>
+    </div>
+    <a class="toggler" ng-class="{ active: isActive('cryptative') }" ng-click="toggle('cryptative')">
+        <h5>Cryptative</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('cryptative') }">
+        <h2>Cryptative</h2>
+    </div>
+    <a class="toggler" ng-class="{ active: isActive('aero') }" ng-click="toggle('aero')">
+        <h5>AeroInvasion</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('aero') }">
+        <h2>AeroInvasion</h2>
+    </div>
+    <a class="toggler" ng-class="{ active: isActive('mips') }" ng-click="toggle('mips')">
+        <h5>MIPS Debugger</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('mips') }">
+        <h2>MIPS Debugger</h2>
     </div>
 </div>
