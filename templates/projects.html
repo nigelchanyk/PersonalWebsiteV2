@@ -108,6 +108,14 @@
     <div class="project-section" ng-class="{ active: isActive('cryptative') }">
         <h2>Cryptative</h2>
         <p>Cryptative is a program that combines both encryption and steganography (hide data in another medium) to securely hide files.</p>
+        <button type="button" class="btn btn-default video-toggle" ng-click="toggleVideo('cryptative')">
+            <span class="glyphicon glyphicon-film"></span> Watch Demo
+        </button>
+        <div class="outer-video-wrapper cryptative">
+            <div class="video-wrapper">
+                <iframe src="http://www.youtube.com/embed/XNZN6hHV9kY" frameborder="0" width="560" height="315"></iframe>
+            </div>
+        </div>
         <h4>Three Encryption Layers</h4>
         <ul>
             <li>AES 128/256-bit encryption</li>
@@ -131,6 +139,20 @@
     </a>
     <div class="project-section" ng-class="{ active: isActive('jsketch') }">
         <h2>JSketch</h2>
+        <div class="gallery">
+            <ul>
+                <li>
+                    <a href="images/jsketch/screenshot_0.png" title="Select Strokes" rel="jsketch-gallery">
+                        <img src="images/jsketch/thumbnail_0.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/jsketch/screenshot_1.png" title="Record Rotation" rel="jsketch-gallery">
+                        <img src="images/jsketch/thumbnail_1.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <p>JSketch is an assignment for <a href="https://cs.uwaterloo.ca/current/courses/course_descriptions/cDescr/CS349">CS 349 - User Interfaces</a>, and its purpose is to create simple animation on a canvas. The goal of this assignment is to demonstrate the idea behind Model-View-Controller (MVC).</p>
         <h4>Features</h4>
         <ul>
@@ -155,6 +177,30 @@
     </a>
     <div class="project-section" ng-class="{ active: isActive('aero') }">
         <h2>AeroInvasion</h2>
+        <div class="gallery">
+            <ul>
+                <li>
+                    <a href="images/aeroinvasion/screenshot_0.png" title="Self-made Star Wars opening crawl" rel="aero">
+                        <img src="images/aeroinvasion/thumbnail_0.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/aeroinvasion/screenshot_1.png" title="Gameplay 1" rel="aero">
+                        <img src="images/aeroinvasion/thumbnail_1.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/aeroinvasion/screenshot_2.png" title="Gameplay 2" rel="aero">
+                        <img src="images/aeroinvasion/thumbnail_2.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/aeroinvasion/screenshot_3.png" title="Boss Battle" rel="aero">
+                        <img src="images/aeroinvasion/thumbnail_3.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <p>Aero Invasion is a two-dimensional aircraft shooting game written in Java. It was originally a high school programming project coded by Vincent Tang and I. I updated a lot of features to the game for version 1.1 in order to enter the ShowCase Competition of University of Toronto.</p>
         <h4>Gameplay</h4>
         <p>The player is allowed to rotate freely, and is allowed choose from a list of weapons. Once the game starts, different enemies enter from all directions. The objective of this game is to defeat all hostile aircrafts, and to minimize damage received as much as possible.</p>
@@ -185,6 +231,20 @@
     </a>
     <div class="project-section" ng-class="{ active: isActive('mips') }">
         <h2>MIPS Debugger</h2>
+        <div class="gallery">
+            <ul>
+                <li>
+                    <a href="images/mipsdebugger/screenshot_0.png" title="Line by Line Execution" rel="mips">
+                        <img src="images/mipsdebugger/thumbnail_0.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/mipsdebugger/screenshot_1.png" title="Syntax Error Detection" rel="mips">
+                        <img src="images/mipsdebugger/thumbnail_1.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <p>A MIPS simulation tool written in Java for debugging purposes. The syntax of the MIPS assembly program is a simplified version of MIPS used in <a href="http://www.cs.uwaterloo.ca/current/courses/course_descriptions/cDescr/newCDescr/CS241.shtml" target="_blank">CS241 - Foundations of Sequential Programs.</a></p>
         <h4>Feature</h4>
         <ul>

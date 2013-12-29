@@ -70,10 +70,18 @@ var ProjectsController = function($scope, $location) {
     };
     $scope.toggle = function(project) {
         $scope.active = project;
-        console.log($scope.active);
     };
+    $scope.toggleVideo = function(project) {
+        $('.outer-video-wrapper.' + project).toggle();
+    }
+
     $scope.$on('$viewContentLoaded', function() {
         $('.gallery a').fancybox();
+    });
+
+    $scope.$on("$locationChangeStart", function() {
+        // Hide video to avoid laggy page transition
+        $video = $('.outer-video-wrapper:visible').hide();
     });
 
 };
@@ -81,7 +89,7 @@ var ProjectsController = function($scope, $location) {
 $(document).ready(function() {
     var navFader = new NavigatorFader('.navbar');
 
-    $('.body-wrapper').bind('click', smartCollapse);
+    $('.body-wrapper, .navbar-nav a, .navbar-brand').bind('click', smartCollapse);
     $(document).keydown(function(e) {
         if (e.keyCode == 27)
             smartCollapse();

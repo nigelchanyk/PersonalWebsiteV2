@@ -58,7 +58,6 @@ body a:hover, body a:focus {
 
 .gallery {
     margin: 15px auto;
-    text-align: center;
 }
 
 .gallery ul {
@@ -91,9 +90,16 @@ li.tabbed {
     opacity: 0.95;
 }
 
+.outer-video-wrapper {
+    display: none;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 .projects .toggler {
     background-color: #181818;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
     display: block;
     padding: 15px;
 }
@@ -120,12 +126,33 @@ li.tabbed {
     margin-bottom: 3px;
 }
 
+.video-toggle {
+    margin: 10px 0;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 10px;
+}
+
+.video-wrapper iframe,
+.video-wrapper object,
+.video-wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .view-animate.ng-enter, .view-animate.ng-leave {
-    -webkit-transition: 0.5s ease-in all; /* Safari/Chrome */
-    -moz-transition: 0.5s ease-in all; /* Firefox */
-    -ms-transition: 0.5s ease-in all; /* IE10 */
-    -o-transition: 0.5s ease-in all; /* Opera */
-    transition: 0.5s ease-in all; /* Future Browsers */
+    -webkit-transition: 0.5s ease all; /* Safari/Chrome */
+    -moz-transition: 0.5s ease all; /* Firefox */
+    -ms-transition: 0.5s ease all; /* IE10 */
+    -o-transition: 0.5s ease all; /* Opera */
+    transition: 0.5s ease all; /* Future Browsers */
     display: block;
 }
 
