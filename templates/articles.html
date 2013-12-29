@@ -1,2 +1,98 @@
 <div>
+    <h2>My Favourite Language Features</h2>
+    <div class="article">
+        <h4>Properties</h4>
+        <p>As fellow programmers, we all know that an object should protect its members from modifications outside of the class. As a result, members are set to private so that they are only accessible within the class. To allow others to read or write private members of the object, getters and setters are introduced. However, this leads to the overhaul of creating methods that are really annoying to write and to use. Consider the following class written in c++.</p>
+<!-- HTML generated using hilite.me -->
+<div class="code-snippet" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">A</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">val;</span>
+<span style="color: #f8f8f2">public:</span>
+  <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">getVal</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">val;</span>
+  <span style="color: #f8f8f2">}</span>
+  <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setVal</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">val)</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.val</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">val;</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+<!-- End of generated code -->
+        <p>The code above does not seem too terrible. However, imagine adding 10 more members. Besides declaring the 10 variables, we would also need to declare 20 extra methods. The creator of C# noticed this pattern, and designed a convenient way to get/set members known as properties. It is a quick way to define members along with their getters and setters.</p>
+<!-- HTML generated using hilite.me -->
+<div class="code-snippet" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">A</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">val</span> <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">get</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">set</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+<!-- End of generated code -->
+        <p>The above code defines the property val with public read and private write access. Unlike getter/setter methods, properties can be treated like variables. For instance, to add val by 1, you can simply write <code>val++</code>. However, to add val in c++, you will have to write <code>setVal(getVal() + 1)</code>, which is a lot more annoying to write.</p>
+
+        <h4>Generators</h4>
+        <p>After a program leaves a method, the local stack is lost, meaning that all local variables have been lost. When the program re-enters the method, it must start over from the beginning. Generators allow the program to continue from where the program last temporary leaves the method. If you are a Python or Ruby user, you should be no stranger to generators. Consider the following code written in Python.</p>
+<!-- HTML generated using hilite.me -->
+<div class="code-snippet" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">def</span> <span style="color: #a6e22e">generate</span><span style="color: #f8f8f2">(num):</span>
+  <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">num</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">yield</span> <span style="color: #f8f8f2">num</span>
+    <span style="color: #f8f8f2">num</span> <span style="color: #f92672">-=</span> <span style="color: #ae81ff">1</span>
+
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">generate(</span><span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">):</span>
+  <span style="color: #66d9ef">print</span> <span style="color: #f8f8f2">i</span>
+</pre></td></tr></table></div>
+<!-- End of generated code -->
+        <p>The above code print from 1000000 to 1. Note that the program temporary exits <code>generate</code> upon <code>yield</code> and continues execution after the for loop enters <code>generate</code> again. Without generators, one would have to either return an array with 1000000 numbers or to turn <code>generate</code> into an object and store state variables within the object.</p>
+        <h4>Keyword Arguments</h4>
+        <p>When I first learned Python, I thought keyword arguments was the best design ever. It solves a lot of code readability issues of functions with lots of arguments. Imagine a class with a constructor that takes in 10 optional arguments. The arguments become extremely difficult to keep track of. Consider the following example written in c++.</p>
+<!-- HTML generated using hilite.me -->
+<div class="code-snippet" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">doStuff</span><span style="color: #f8f8f2">(string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">a,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">b,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">c,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">d,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">e,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">f,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">g,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">h,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">i,</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">j)</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #75715e">// do stuff</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #f8f8f2">string</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;x&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">string</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;y&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">string</span> <span style="color: #f8f8f2">z</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;z&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">doStuff(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">x,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">y,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f8f8f2">NULL,</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">z);</span>
+</pre></td></tr></table></div>
+<!-- End of generated code -->
+        <p>Are you able to figure out which arguments <code>x</code>, <code>y</code>, and <code>z</code> are assigned to? You are probably more inclined to find the person who wrote this code and punch the person in the face. Writing out all the <code>NULL</code>s would also drive people nuts. Now, you might find this stupid and ask, &quot;why not overload the function to only accept three arguments?&quot; Overloading the function definitely helps, but it cannot always save the world. What if I want to pass in a, b, and c, but occasionally I want to pass in d, e, and f instead? Function overload would not work because the type of the arguments is the same. The program will not compile due to ambiguity. Now, it is time for keyword arguments to the rescue. The above code can be rewritten into the following in Python.</p>
+<!-- HTML generated using hilite.me -->
+<div class="code-snippet" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">def</span> <span style="color: #a6e22e">doStuff</span><span style="color: #f8f8f2">(a</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">d</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">e</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">f</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">g</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">h</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None):</span>
+  <span style="color: #75715e"># doStuff</span>
+
+<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;x&#39;</span>
+<span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;y&#39;</span>
+<span style="color: #f8f8f2">z</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;z&#39;</span>
+<span style="color: #f8f8f2">doStuff(a</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">x,</span> <span style="color: #f8f8f2">e</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">y,</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">z)</span>
+</pre></td></tr></table></div>
+<!-- End of generated code -->
+        <p>Now, we can clearly see that <code>x</code>, <code>y</code>, and <code>z</code> are assigned to <code>a</code>, <code>e</code>, and <code>j</code> respectively. The caller can also rearrange the order of the arguments arbitrarily, i.e. <code>doStuff(j=z, a=x, e=y)</code>, because all arguments are unambiguous regardless of the order and the number of arguments.</p>
+    </div>
+    <h2>My Rant About JavaScript</h2>
 </div>

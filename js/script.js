@@ -41,15 +41,15 @@ app.config(['$routeProvider', function($routeProvider) {
         when('/', {
             templateUrl: 'templates/home.html'
         }).
-        when('/blog', {
-            templateUrl: 'templates/blog.html'
-        }).
         when('/resume', {
             templateUrl: 'templates/resume.html'
         }).
         when('/projects', {
             templateUrl: 'templates/projects.html',
             controller: 'ProjectsController'
+        }).
+        when('/articles', {
+            templateUrl: 'templates/articles.html'
         }).
         otherwise({
             redirectTo: '/'

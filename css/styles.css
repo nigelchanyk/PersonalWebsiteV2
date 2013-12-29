@@ -3,6 +3,10 @@ body {
     padding-top: 50px;
 }
 
+code {
+    background: #333;
+}
+
 h1, h2 {
     text-shadow: 0 0 10px #aaa;
 }
@@ -24,6 +28,16 @@ body a:hover, body a:focus {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.code-snippet {
+    margin: 10px 0;
+}
+
+.code-snippet pre {
+    background-color: inherit;
+    border: none;
+    white-space: pre;
 }
 
 .content {
