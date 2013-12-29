@@ -44,11 +44,43 @@ body a:hover, body a:focus {
 	padding-top: 10px;
 }
 
+.download {
+    font-size: 16px;
+    text-align: center;
+}
+
 .footer-text {
 	font-size: 80%;
 	color: #CCC;
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.gallery {
+    margin: 15px auto;
+    text-align: center;
+}
+
+.gallery ul {
+    list-style: none;
+    padding: 0;
+}
+
+.gallery ul a:hover {
+    text-decoration: none;
+}
+
+.gallery ul a:hover img {
+	border: 5px solid #444;
+}
+
+.gallery ul img {
+	border: 5px solid #333;
+}
+
+.gallery ul li {
+    display: inline;
+    margin: 0 3px;
 }
 
 li.tabbed {
@@ -60,12 +92,28 @@ li.tabbed {
 }
 
 .projects .toggler {
-    display: block;
+    background-color: #181818;
     border-bottom: 1px solid #ccc;
+    display: block;
+    padding: 15px;
+}
+
+.projects .toggler:hover {
+    background-color: inherit;
+    text-shadow: 0 0 6px #ccc;
+}
+
+.projects a.toggler {
+    text-decoration: none;
+}
+
+.projects .toggler h5 {
+    margin: 0;
 }
 
 .projects .project-section {
     border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
 .spaceless-paragraphs p {

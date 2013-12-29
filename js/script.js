@@ -72,6 +72,10 @@ var ProjectsController = function($scope, $location) {
         $scope.active = project;
         console.log($scope.active);
     };
+    $scope.$on('$viewContentLoaded', function() {
+        $('.gallery a').fancybox();
+    });
+
 };
 
 $(document).ready(function() {

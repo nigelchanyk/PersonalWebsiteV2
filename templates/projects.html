@@ -4,29 +4,199 @@
     </a>
     <div class="project-section" ng-class="{ active: isActive('archetype') }">
         <h2>Archetype</h2>
+        <div class="gallery">
+            <ul>
+                <li>
+                    <a href="images/archetype/screenshot_0.png" title="Gunshot" rel="arcehtype-gallery">
+                        <img src="images/archetype/thumbnail_0.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/archetype/screenshot_1.png" title="AI Moving" rel="arcehtype-gallery">
+                        <img src="images/archetype/thumbnail_1.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/archetype/screenshot_2.png" title="Enemy Destroyed!!!" rel="arcehtype-gallery">
+                        <img src="images/archetype/thumbnail_2.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Archetype is a 3D first-person shooter game written in C# with Mogre 3D, (a .NET wrapper for Ogre 3D).</p>
+        <h4>Gameplay</h4>
+        <p>Unlike any regular first-person shooters like Counter Strike, users can use superpowers. The goal of this game is to eliminate your enemies before the timer runs out.</p>
+        <h4>Features</h4>
+        <ul>
+            <li>AI for computer players</li>
+            <li>Created a primitive shape system for accurate collision detection</li>
+            <li>Utilized the Mogre library for skeletal animation and particle systems</li>
+        </ul>
+        <h4>Credits</h4>
+        <p>Special thanks to people who provide their work to the public.</p>
+        <ul>
+            <li>Stephen Saldanha's USP Gunshot Sound (License: <a href="http://creativecommons.org/licenses/by/3.0/">CC By 3.0</a>)</li>
+        </ul>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Windows operating system</li>
+        </ul>
+        <p class="download"><a href="https://github.com/nigelchanyk/Archetype">View on GitHub</a></p>
     </div>
     <a class="toggler" ng-class="{ active: isActive('etherea') }" ng-click="toggle('etherea')">
         <h5>Tales of Etherea</h5>
     </a>
     <div class="project-section" ng-class="{ active: isActive('etherea') }">
         <h2>Tales of Etherea</h2>
+        <div class="gallery">
+            <ul>
+                <li>
+                    <a href="images/etherea/main_menu.png" title="Main Menu" rel="etherea-gallery">
+                        <img src="images/etherea/main_menu_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/etherea/character.png" title="Character" rel="etherea-gallery">
+                        <img src="images/etherea/character_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/etherea/animation.png" title="Walking Animation" rel="etherea-gallery">
+                        <img src="images/etherea/animation_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/etherea/city.png" title="City" rel="etherea-gallery">
+                        <img src="images/etherea/city_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/etherea/bounding_boxes.png" title="Bounding Boxes" rel="etherea-gallery">
+                        <img src="images/etherea/bounding_boxes_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/etherea/flames.png" title="Summon the Flames!" rel="etherea-gallery">
+                        <img src="images/etherea/flames_thumbnail.png" width="50px" height="50px" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Tales of Etherea is a third-person 3D action oriented adventure game. It is my first attempt on large 3D game development using Microsoft XNA Framework. Even though creation of the game is still in progress, some of the major functionality has already been implemented, and is presented in the screenshots above. I have also written a storyline for the game in order to make this game more attractive to players.</p>
+        <h4>Gameplay</h4>
+        <p>The game revolves around the main character of the story. Player can wield any close ranged weapons, such as swords and scythes, to attack enemies while casting powerful magic spells to inflict serious damage on enemies.</p>
+        <h4>Features</h4>
+        <ul>
+            <li>Custom shader and post-rendering process, such as glowing</li>
+            <li>Used both custom-made particle engine and Dynamic Particle System Framework (DPSF) to produce various particle effects</li>
+            <li>Custom-made animation engine to animate character parts</li>
+            <li>Supported both indoor/outdoor environment</li>
+            <li>Implemented path finding algorithm using Dijkstra's Algorithm</li>
+            <li>Customized model content pipeline objects to precompute bounding boxes for each model</li>
+        </ul>
+        <h4>Credits</h4>
+        <p>Lots of models and audio files from the open source community are used. The full credit list will be added once the game is released.</p>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Windows operating system</li>
+        </ul>
+        <p>The rest of the system requirements will be listed once the game is released.</p>
     </div>
     <a class="toggler" ng-class="{ active: isActive('cryptative') }" ng-click="toggle('cryptative')">
         <h5>Cryptative</h5>
     </a>
     <div class="project-section" ng-class="{ active: isActive('cryptative') }">
         <h2>Cryptative</h2>
+        <p>Cryptative is a program that combines both encryption and steganography (hide data in another medium) to securely hide files.</p>
+        <h4>Three Encryption Layers</h4>
+        <ul>
+            <li>AES 128/256-bit encryption</li>
+            <li>Byte reordering by using bytes from another file for positioning</li>
+            <li>Feed the data into another encryption program that you write through its input stream, and get the encryption result from its output stream</li>
+        </ul>
+        <h4>Steganography Options</h4>
+        <ul>
+            <li>Hide encrypted data in files with an end-of-file (EOF) marker</li>
+            <li>Use the low bits of each color per pixel to hide encrypted data</li>
+            <li>Use the low bits of each audio frame in an audio file to hide encrypted data</li>
+        </ul>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Java Runtime Environment (JRE) 1.7 or above</li>
+        </ul>
+        <p>Unfortunately, this program cannot be shared due to Canada's cryptography export regulations.</p>
+    </div>
+    <a class="toggler" ng-class="{ active: isActive('jsketch') }" ng-click="toggle('jsketch')">
+        <h5>JSketch</h5>
+    </a>
+    <div class="project-section" ng-class="{ active: isActive('jsketch') }">
+        <h2>JSketch</h2>
+        <p>JSketch is an assignment for <a href="https://cs.uwaterloo.ca/current/courses/course_descriptions/cDescr/CS349">CS 349 - User Interfaces</a>, and its purpose is to create simple animation on a canvas. The goal of this assignment is to demonstrate the idea behind Model-View-Controller (MVC).</p>
+        <h4>Features</h4>
+        <ul>
+            <li>Draw, select, erase, and transform strokes on canvas</li>
+            <li>Export animation an <b>HTML 5 canvas animation</b> without the usage of any third party libraries <a href="content/jsketch-sample.html" target="_blank">(here is a sample of an exported animation)</a></li>
+            <li>Regular features like any other editing software, such as loading, saving, undo, and redo</li>
+        </ul>
+        <h4>Credits</h4>
+        <p>All icons are provided by various open source projects listed below:</p>
+        <ul>
+            <li><a href="http://www.oxygen-icons.org/">Oxygen</a> (Dual license: <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> or <a href="http://www.gnu.org/copyleft/lesser.html">LGPL</a>)</li>
+            <li><a href="http://www.everaldo.com/">Crystal Project</a> (License: <a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL-2.1</a>)</li>
+        </ul>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Java Runtime Environment (JRE) 1.7 or above</li>
+        </ul>
+        <p class="download"><a href="content/JSketch.zip">Download</a></p>
     </div>
     <a class="toggler" ng-class="{ active: isActive('aero') }" ng-click="toggle('aero')">
         <h5>AeroInvasion</h5>
     </a>
     <div class="project-section" ng-class="{ active: isActive('aero') }">
         <h2>AeroInvasion</h2>
+        <p>Aero Invasion is a two-dimensional aircraft shooting game written in Java. It was originally a high school programming project coded by Vincent Tang and I. I updated a lot of features to the game for version 1.1 in order to enter the ShowCase Competition of University of Toronto.</p>
+        <h4>Gameplay</h4>
+        <p>The player is allowed to rotate freely, and is allowed choose from a list of weapons. Once the game starts, different enemies enter from all directions. The objective of this game is to defeat all hostile aircrafts, and to minimize damage received as much as possible.</p>
+        <h4>Features</h4>
+        <ul>
+            <li>Can be played with a wiimote, a keyboard with a mouse, or a smartboard/touchscreen.</li>
+            <li>Self-made Star Wars opening crawl</li>
+            <li>LAN network versus mode</li>
+        </ul>
+        <h4>Credits</h4>
+        <p>Special thanks to people who provide their work to the public.</p>
+        <ul>
+            <li>Prinz Eugn (Mark Simpson)'s aircraft images</li>
+            <li>Kengine Gaming's explosion images</li>
+            <li>Michael Laforest's WiiUseJ library</li>
+        </ul>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Minimum resolution of 1024 px x 768 px</li>
+            <li>Java Runtime Environment (JRE)</li>
+            <li>(Recommended) Rage Italic Font</li>
+            <li>(Optional) Wii remote controller and Bluetooth receiver</li>
+        </ul>
+        <p class="download"><a href="content/aeroInvasion.zip">Download</a></p>
     </div>
     <a class="toggler" ng-class="{ active: isActive('mips') }" ng-click="toggle('mips')">
         <h5>MIPS Debugger</h5>
     </a>
     <div class="project-section" ng-class="{ active: isActive('mips') }">
         <h2>MIPS Debugger</h2>
+        <p>A MIPS simulation tool written in Java for debugging purposes. The syntax of the MIPS assembly program is a simplified version of MIPS used in <a href="http://www.cs.uwaterloo.ca/current/courses/course_descriptions/cDescr/newCDescr/CS241.shtml" target="_blank">CS241 - Foundations of Sequential Programs.</a></p>
+        <h4>Feature</h4>
+        <ul>
+            <li>Execute MIPS assembly program</li>
+            <li>Monitor changes in registers and memory</li>
+            <li>Detect syntax errors</li>
+        </ul>
+        <h4>System Requirements</h4>
+        <ul>
+            <li>Windows operating system</li>
+            <li>Java Runtime Environment (JRE)</li>
+        </ul>
+        <p class="download"><a href="content/MipsDebuggerbeta0.06.zip">Download</a></p>
     </div>
 </div>
