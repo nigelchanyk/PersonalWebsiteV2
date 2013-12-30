@@ -4,7 +4,7 @@ var NavigatorFader = function(nav) {
     this.scroll = $(document).scrollTop();
     this.visible = true;
     this.timeout = null;
-    this.activeArea = $(nav).height();
+    this.activeArea = $(nav).height() + parseInt($(nav).css('margin-top').replace('px', ''));
     
     $(document).scroll(function() {
         if (_this.timeout != null)
