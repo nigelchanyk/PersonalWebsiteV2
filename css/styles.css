@@ -1,3 +1,4 @@
+/* Resets */
 body {
     background: #222;
     padding-top: 50px;
@@ -17,6 +18,32 @@ h1, h2, h3, h4, h5, h6 {
 
 p, ul, li {
     color: #ddd;
+}
+
+/* Styles */
+blockquote {
+  background: #444;
+  color: #eee;
+  border-left: 10px solid #ccc;
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #eee;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote .source {
+    display: block;
+    color: #999;
+    text-align: right;
 }
 
 body a:hover, body a:focus {
@@ -89,6 +116,7 @@ body a:hover, body a:focus {
 
 .gallery ul img {
 	border: 5px solid #333;
+    border-radius: 4px;
 }
 
 .gallery ul li {
@@ -134,6 +162,11 @@ li.tabbed {
 .projects .project-section {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
+}
+
+.resume-printable-link {
+    display: block;
+    margin: 15px 0 0 0;
 }
 
 .spaceless-paragraphs p {
