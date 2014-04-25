@@ -48,9 +48,6 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'templates/projects.html',
             controller: 'ProjectsController'
         }).
-        when('/articles', {
-            templateUrl: 'templates/articles.html'
-        }).
         otherwise({
             redirectTo: '/'
     });
