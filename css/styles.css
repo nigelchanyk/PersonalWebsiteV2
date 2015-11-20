@@ -9,11 +9,16 @@ code {
 }
 
 h1, h2 {
+    margin-top: 30px;
     text-shadow: 0 0 10px #aaa;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #fff;
+}
+
+h3, h4, h5, h6 {
+    margin-top: 20px;
 }
 
 p, ul, li {
